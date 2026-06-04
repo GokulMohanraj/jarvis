@@ -24,27 +24,54 @@ Build a private offline AI assistant that can:
 
 ---
 
-# 📂 Progress Tracking
-
-Daily development progress is maintained inside:
+# 📂 Project Structure
 
 ```text
-docs/progress/
+jarvis/
+│
+├── api/
+├── brain/
+├── voice/
+├── automation/
+├── memory/
+├── search/
+├── ui/
+├── config/
+├── logs/
+├── data/
+├── docs/
+│   └── progress/
+│       ├── day-01.md
+│       ├── day-02.md
+│       └── ...
+│
+├── requirements.txt
+├── .gitignore
+└── README.md
 ```
 
 ---
 
-# ✅ Current Status
+# ✅ Current Features
 
-Day 1 / 30 Completed
+- Local AI integration using Ollama
+- FastAPI backend
+- Chat API endpoint
+- Modular architecture
+- Config-based settings
+- Local LLM communication
 
-Completed:
-- Python setup
-- Git setup
-- Docker installation
-- Ollama setup
-- FastAPI backend initialization
-- Local LLM testing
+---
+
+# 🧠 Tested Local Models
+
+```bash
+ollama run phi4
+```
+
+```bash
+ollama run llama3
+```
 
 ---
 
@@ -58,6 +85,38 @@ API Docs:
 
 ```text
 http://127.0.0.1:8000/docs
+```
+
+---
+
+# 🔥 Available API
+
+## POST `/chat`
+
+Example request:
+
+```json
+{
+  "message": "Hello Jarvis"
+}
+```
+
+---
+
+# 📅 Progress Tracking
+
+Detailed daily progress is maintained inside:
+
+```text
+docs/progress/
+```
+
+---
+
+# 📈 Progress
+
+```text
+Day 2 / 30 ✅
 ```
 
 ---
