@@ -1,6 +1,17 @@
+# Database
+*.db
+
+# SQLite
+*.sqlite
+*.sqlite3
+
+# Python
 venv/
 __pycache__/
-.env
-logs/
 *.pyc
-.DS_Store
+
+# Environment
+.env
+
+# Logs
+logs/

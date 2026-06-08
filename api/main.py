@@ -3,11 +3,15 @@ from pydantic import BaseModel
 
 from brain.llm import ask_jarvis
 
-from memory.session_memory import (
-    add_message
+from memory.sqlite_memory import (
+    add_message,
+    get_history,
+    clear_history
 )
-from memory.session_memory import clear_history
-from memory.session_memory import get_history
+
+from memory.database import initialize_database
+
+initialize_database()
 
 app = FastAPI()
 
