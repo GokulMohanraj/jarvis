@@ -3,6 +3,12 @@ from pydantic import BaseModel
 
 from brain.llm import ask_jarvis
 
+from memory.session_memory import (
+    add_message
+)
+from memory.session_memory import clear_history
+from memory.session_memory import get_history
+
 app = FastAPI()
 
 class ChatRequest(BaseModel):
@@ -15,9 +21,35 @@ def home():
 @app.post("/chat")
 def chat(request: ChatRequest):
 
-    response = ask_jarvis(request.message)
+    add_message(
+        "user",
+        request.message
+    )
+
+    response = ask_jarvis(      
+        request.message
+    )
+
+    add_message(
+        "assistant",
+        response
+    )
 
     return {
         "user": request.message,
         "jarvis": response
     }
+
+@app.post("/memory/clear")
+def clear_memory():
+
+    clear_history()
+
+    return {
+        "message": "Session memory cleared"
+    }
+
+@app.get("/memory")
+def memory():
+
+    return get_history()
